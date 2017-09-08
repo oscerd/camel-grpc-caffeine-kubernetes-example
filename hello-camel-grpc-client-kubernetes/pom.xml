@@ -132,7 +132,7 @@
           <generator>
             <config>
               <java-exec>
-                <mainClass>org.apache.camel.example.springboot.grpc.Application</mainClass>
+                <mainClass>com.github.oscerd.grpc.Application</mainClass>
               </java-exec>
             </config>
           </generator>

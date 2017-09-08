@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.example.springboot.grpc;
+package com.github.oscerd.grpc;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -39,7 +39,7 @@ public class CamelGrpcRoute extends RouteBuilder {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
 
             }
-        }).to("grpc://grpc-server:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
+        }).to("grpc://grpc-server:50051/com.github.oscerd.grpc.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
     }
 
 }
