@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  name: grpc-server
+  labels: 
+    name: grpc-server
+spec: 
+  template: 
+    metadata: 
+      labels: 
+        name: grpc-server
+    spec: 
+      containers: 
+      - name: grpc-server
+        image: oscerd/grpc-server
+        imagePullPolicy: Always
+        env:
+        ports: 
+        - name: grpc
+          containerPort: 50051
