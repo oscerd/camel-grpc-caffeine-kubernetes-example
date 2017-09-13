@@ -1,0 +1,26 @@
+startDelaySecs: 5
+ssl: false
+blacklistObjectNames: ["java.lang:*"]
+rules:
+# Context level
+  - pattern: 'org.apache.camel<context=([^,]+), type=context, name=([^,]+)><>ExchangesCompleted'
+    name: org.apache.camel.ExchangesCompleted
+    help: Exchanges Completed
+    type: COUNTER
+    labels:
+      context: $1
+      type: context
+  - pattern: 'org.apache.camel<context=([^,]+), type=context, name=([^,]+)><>ExchangesFailed'
+    name: org.apache.camel.ExchangesFailed
+    help: Exchanges ExchangesFailed
+    type: COUNTER
+    labels:
+      context: $1
+      type: context
+  - pattern: 'org.apache.camel<context=([^,]+), type=context, name=([^,]+)><>ExchangesInflight'
+    name: org.apache.camel.ExchangesInflight
+    help: Exchanges Inflight
+    type: COUNTER
+    labels:
+      context: $1
+      type: context
